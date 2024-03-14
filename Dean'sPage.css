@@ -1,0 +1,320 @@
+html {
+    height: 100%;
+}
+
+#MainHeader {
+    margin: auto;
+    width: fit-content;
+    text-decoration: underline;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #f6cf06;
+}
+body {
+    background-color: #f0f3f4;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+
+/* main container that holds everything */
+#mainContainer {
+    padding: 10px;
+    margin-top: 50px;
+}
+
+/* lays out the info containers next to each other */
+#infoContainers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    border-radius: 10px;
+    color: #f6cf06;
+}
+
+/* adds the border to both info containers */
+#infoContainer, #infoContainerB {
+    padding-left: 5px;
+    background-color: black;
+    border-radius: 10px;
+
+}
+
+
+#statsImageContainer{
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 10px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+#statsContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
+    row-gap: 10px;
+}
+
+#imageContainer {
+    height: auto;
+    width: auto;
+}
+
+#statsTag {
+    grid-column: 1/3;
+    
+}
+
+/* has "common build" as text */
+#recommendedItems {
+    padding-top: 5px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 64px 64px 64px 64px 64px 64px;
+    justify-content: space-around;
+    
+}
+
+#commonBuildContainer, #itemTable {
+    margin-top: 10px;
+    background-color: black;
+    border-radius: 10px;
+
+}
+
+/* header in each information box */
+.infoContainerHeader , .boxHeader  {
+    text-align: center;
+    text-decoration: underline;
+    color: #f6cf06;
+    font-size: 25px;
+}
+
+#smolderImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* ability container setup that allows me to layout all the boxes with images next to them */
+#abilitesContainer {
+    display: grid;
+    grid-template-columns: 64px auto;
+    grid-template-rows: 64px 64px 64px 64px 64px;
+    gap: 10px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+
+.imgWrap{
+    position: relative;
+    overflow: hidden;
+}
+
+/* image description settings */
+.imgDesc {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #f6cf06;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    margin-bottom: 10px;    
+}
+
+
+
+
+/* set keyframe information for my-animation for both firefox and chrome */
+@-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+}
+@keyframes my-animation {
+    from {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}
+  
+
+/* show description information when user hovers the image. Plays the animation for the text, solves overflowing text issues*/
+.imgWrap:hover .imgDesc {
+    visibility: visible;
+    opacity: 1;
+    background-color: #333;
+
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 5s linear infinite;
+    -webkit-animation: my-animation 5s linear infinite;
+    animation: my-animation 5s linear infinite;
+}
+
+article {
+    font-size: 25px;
+}
+
+.statInfo {
+    overflow: hidden;
+    font-size: 1em;
+    border: 3px solid white;
+    width: auto;
+    color: #f6cf06;
+    text-overflow: ellipsis;
+    height: 48px;
+    border-radius: 10px;
+}
+
+/* removes the scrollbar indicator for the ability description*/
+.abilityInfo::-webkit-scrollbar, .statInfo::-webkit-scrollbar {
+    display: none;
+}
+
+.abilityInfo{
+    overflow: hidden;
+    font-size: 1em;
+    border: 3px solid white;
+    width: auto;
+    height: 64px;
+    text-overflow: ellipsis;
+    border-radius: 10px;
+
+
+}
+
+.abilityInfo:hover ,.statInfo:hover{
+    overflow: scroll;
+}
+
+h3, .abilityName, .statName {
+    text-align: center;
+    text-decoration: underline;
+    color:#f6cf06;
+}
+
+th {
+    font-size: auto;
+    width: 100px; 
+}
+
+table, th, td {
+    width: auto;
+    border: 1px solid white;
+    color:#f6cf06;
+    border-radius: 10px;
+
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Add a black background color to the top navigation */
+nav {
+    position: fixed;
+    background-color: black;
+    color: #f6cf06;
+    display: flex;
+    border-radius: 25px;
+    width: 580px;
+    height: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+  
+  /* Style the links inside the navigation bar */
+nav a {
+    float: none;
+    color: yellow;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+  
+/* Change the color of links on hover */
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+  
+/* Add a color to the active/current link */
+nav a.active {
+    background-color: #c80784;
+    color: white;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: black;
+    display: grid;
+    margin-top: 10px;
+    width: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    border-radius: 10px;
+}
+
+.footerInfo {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #ff0000;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    nav {
+        position: fixed;
+        background-color: black;
+        color: #f6cf06;
+        display: flex;
+        border-radius: 25px;
+        width: 400px;
+        height: 50px;
+        justify-content: space-evenly;
+        align-items: center;
+        left: 50%;
+        top: 50px;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+  }
